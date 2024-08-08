@@ -1,0 +1,88 @@
+import { defineStore } from 'pinia'
+import { ref } from 'vue'
+
+
+export const useGlobalStore = defineStore('global', () => {
+
+    // AÑOS
+    //----------------------------------------
+    const year = new Date()
+    //----------------------------------------
+
+    // INICIO SIDEBAR
+    //----------------------------------------
+    const openSidebar = ref(false)
+    
+    function updateOpenSidebar () {
+        openSidebar.value = !openSidebar.value
+    }
+    //----------------------------------------
+    // FIN SIDEBAR
+
+    // INICIO TITLE PAGE
+    //----------------------------------------
+
+    const titlePage = ref({
+        title : '',
+        icon : 'fas fa-home',
+        textColor : 'text-white',
+        color : 'bg-blue-muni'
+    })
+
+    function changeTitlePage (title = 'Home',icon = 'fas fa-home',color = 'bg-blue-muni',textColor = 'text-white') {
+        titlePage.value.title = title
+        titlePage.value.icon = icon
+        titlePage.value.textColor = textColor
+        titlePage.value.color = color
+    }   
+    //----------------------------------------
+    // FIN TITLE PAGE
+
+
+    // INICIO ALERTA TOAST
+    //----------------------------------------
+    const toast = ref({
+        message: '',
+        type: '',
+        title: ' A T E N C I Ó N '
+    })
+
+    function setAlert(message,type,title = ' A T E N C I Ó N '){
+        toast.value.message = message
+        toast.value.type = type
+        toast.value.title = title
+    }
+    //----------------------------------------
+    // FIN ALERTA TOAST
+
+
+    function getNestedValue(obj, key) {
+        const keys = key.split('.');
+        for (const innerKey of keys) {
+            if (obj.hasOwnProperty(innerKey)) {
+                obj = obj[innerKey];
+            } else {
+                return null;
+            }
+        }
+        return obj;
+    }
+
+
+
+
+    return {
+        openSidebar,
+        updateOpenSidebar,
+
+        titlePage,
+        changeTitlePage,
+
+        toast,
+        setAlert,
+
+        year,
+
+        getNestedValue,
+    }
+})
