@@ -4,6 +4,7 @@
     import SideBar from '../components/SideBar.vue'
     import Footer from '../components/Footer.vue'
     import BackTop from '../components/BackTop.vue'
+    import Tabs from '../components/Tabs.vue'
 
     const auth = useAuthStore()
 
@@ -23,6 +24,7 @@
                         </div>
                     </div>
                     <div v-if="!auth.loading">
+                        <Tabs />
                         <RouterView/>
                     </div>
                     <BackTop />

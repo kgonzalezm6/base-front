@@ -16,6 +16,11 @@ const router = createRouter({
 			children: [
 				{
 					path: '',
+					name: '',
+					component: () => router.push({name : 'Home'})
+				},
+				{
+					path: 'home',
 					name: 'Home',
 					component: () => import('../views/Home.vue'),
 					meta: {
