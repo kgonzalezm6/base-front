@@ -23,7 +23,7 @@
                             <h1 class="text-3xl font-bold text-blue-muni text-center">Cargando <span class="animate-ping"> . . . . </span></h1>
                         </div>
                     </div>
-                    <div v-if="!auth.loading">
+                    <div v-if="!auth.loading" class="p-5">
                         <Tabs />
                         <RouterView/>
                     </div>

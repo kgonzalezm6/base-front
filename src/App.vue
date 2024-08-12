@@ -15,7 +15,9 @@
 </script>
 
 <template>
-	<Toast v-if="global.toast.message.length > 0" :message="global.toast.message" />
+	<div v-if="global.toasts.length > 0" class="fixed top-12 right-2 grid z-30">
+		<Toast v-for="toast in global.toasts" :message="toast.message" :type="toast.type" :title="toast.message" />
+	</div>
 	<RouterView />
 </template>
 

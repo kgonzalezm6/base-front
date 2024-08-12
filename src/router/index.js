@@ -30,7 +30,7 @@ const router = createRouter({
 				{
 					path: 'test',
 					name: 'Test',
-					component: () => import('../views/DataTable.vue'),
+					component: () => import('../views/Test.vue'),
 					meta: {
 						auth : true
 					}

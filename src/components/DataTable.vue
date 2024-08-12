@@ -432,8 +432,8 @@ onMounted(() => {
                     </tr>
                 </slot>
                 <tr v-if="props.loading">
-                    <td align="center" :colspan="props.headers.length">
-                        <LoadingBar :color="color" class="px-10" />
+                    <td align="center" :colspan="props.headers.length" class="px-10">
+                        <LoadingBar class="h-1 bg-gray-400" />
                         <span class="animate-ping">Cargando data ....</span>
                     </td>
                 </tr>

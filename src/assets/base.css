@@ -7,7 +7,7 @@
 }
 /* Buttons colors */
 .btn-primary {
-    @apply bg-blue-muni border-blue-700 text-blue-200;
+    @apply bg-blue-muni border-blue-900 text-blue-200;
 }
 
 .btn-success {
@@ -35,7 +35,7 @@
 }
 
 .btn {
-    @apply border-2 text-lg bg-opacity-90 hover:bg-opacity-100 focus:bg-opacity-100 font-bold active:scale-95 disabled:bg-gray-400 disabled:shadow-black disabled:border-gray-600 disabled:text-gray-500;
+    @apply border-2 text-lg bg-opacity-90 hover:bg-opacity-100 focus:bg-opacity-100 font-bold active:scale-95 disabled:bg-gray-400 disabled:shadow-black disabled:border-gray-600 disabled:text-gray-500 disabled:scale-100 disabled:cursor-not-allowed;
 }
 
 .no-scrollbar::-webkit-scrollbar {

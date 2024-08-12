@@ -1,14 +1,9 @@
 <script setup>
   import { ref, onMounted } from 'vue'
 
-  const props = defineProps({
-    size : {
-      default : 'h-1'
-    },
-    color : {
-      default : 'bg-blue-500'
-    }
-  })
+  defineOptions({
+        inheritAttrs: false
+    })
   
   const progress = ref(0)
 
@@ -30,7 +25,7 @@
 <template>
   <div class="w-full">
     <div class=" bg-gray-300 rounded-full border-none overflow-hidden flex justify-center items-center">
-      <div class="text-center font-bold leading-none transition-all" :class="props.size +' '+ props.color"  :style="{width: progress+'%'}"></div>
+      <div v-bind="$attrs" class="text-center font-bold leading-none transition-all" :style="{width: progress+'%'}"></div>
     </div>
   </div>
 </template>

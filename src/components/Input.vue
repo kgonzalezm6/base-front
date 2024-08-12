@@ -7,17 +7,18 @@
         error: false
     })
     defineEmits(['update:modelValue'])
+    
     defineOptions({
         inheritAttrs: false
     })
 </script>
 
 <template>
-    <div v-if="props.option === 'label'" class="relative mb-3">
+    <div v-if="props.option === 'label'" class="relative mb-3 w-full">
         <input
             v-bind="$attrs"
             :class="{'border-red-500' : props.error }"
-            class="peer m-0 block h-[58px] bg-white rounded border-2 focus-within:border-blue-400 bg-transparent bg-clip-padding px-3 py-4 text-base font-normal leading-tight text-neutral-700 transition duration-200 ease-linear placeholder:text-transparent focus:border-primary focus:pb-[0.625rem] focus:pt-[1.625rem] focus:text-neutral-700 focus:outline-none peer-focus:text-primary [&:not(:placeholder-shown)]:pb-[0.625rem] [&:not(:placeholder-shown)]:pt-[1.625rem]"
+            class="peer m-0 block h-[58px] bg-white w-full rounded border-2 focus-within:border-blue-400 bg-transparent bg-clip-padding px-3 py-4 text-base font-normal leading-tight text-neutral-700 transition duration-200 ease-linear placeholder:text-transparent focus:border-primary focus:pb-[0.625rem] focus:pt-[1.625rem] focus:text-neutral-700 focus:outline-none peer-focus:text-primary [&:not(:placeholder-shown)]:pb-[0.625rem] [&:not(:placeholder-shown)]:pt-[1.625rem]"
             placeholder="name@example.com"
             :value="props.modelValue" @input="$emit('update:modelValue', $event.target.value)"
         />

@@ -41,16 +41,10 @@ export const useGlobalStore = defineStore('global', () => {
 
     // INICIO ALERTA TOAST
     //----------------------------------------
-    const toast = ref({
-        message: '',
-        type: '',
-        title: ' A T E N C I Ó N '
-    })
+    const toasts = ref([])
 
     function setAlert(message,type,title = ' A T E N C I Ó N '){
-        toast.value.message = message
-        toast.value.type = type
-        toast.value.title = title
+        toasts.value.push({ message : message, type : type, title : title })
     }
     //----------------------------------------
     // FIN ALERTA TOAST
@@ -78,7 +72,7 @@ export const useGlobalStore = defineStore('global', () => {
         titlePage,
         changeTitlePage,
 
-        toast,
+        toasts,
         setAlert,
 
         year,
